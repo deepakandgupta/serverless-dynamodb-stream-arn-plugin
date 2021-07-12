@@ -1,0 +1,18 @@
+{
+  "name": "serverless-dynamodb-stream-arn-plugin",
+  "version": "0.0.1",
+  "description": "Fetches and then adds existing DynamoDB Table streams to serverless.yml file using table name for serverless framework",
+  "main": "index.js",
+  "keywords": [
+    "dynamodb",
+    "dynamodb-streams",
+    "aws",
+    "serverless",
+    "dynamo"
+  ],
+  "peerDependencies": {
+    "serverless": "^2.51.2"
+  },
+  "author": "strewizer",
+  "license": "MIT"
+}
