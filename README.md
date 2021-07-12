@@ -43,12 +43,13 @@ Note:
         - Effect: Allow
           Action:
             - "dynamodb:ListStreams"
-          Resource: *
-
+          Resource: '*' 
 ```
-2. Passing region where the table exists is important, the plugin automatically takes the value from `serverless -> provider -> region`
+`Resource property can be more specific for example`
+`arn:aws:dynamodb:${self:provider.region}:*:table/*/stream/*`
 
-This can be overwritten by passing region in command line property or
-Optionally you can add region of where to fetch dynamodb tables by passing it as the second parameter to the fetchStreamArn Function 
+2. Passing region where the table exists is important, 
 
-`arn: ${fetchStreamARN(<tableName>, <region>)}`
+    1. The plugin automatically takes the value of region from `serverless -> provider -> region`
+    2. Can also be passed as region `--region <my region>` in command line
+    3. Add region by passing it as the second parameter to the fetchStreamArn Function `arn: ${fetchStreamARN(<tableName>, <region>)}`
