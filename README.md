@@ -1,8 +1,11 @@
- #### serverless-dynamodb-stream-arn-plugin
+ ### serverless-dynamodb-stream-arn-plugin
  
 Fetches and then adds existing DynamoDB Table streams to serverless.yml file using table name for serverless framework
 
 This plugin calls AWS Describe Streams on you behalf and adds the stream to serverless config file.
+
+___
+
 How to use
 
 1. Add to your serverless config plugins object
