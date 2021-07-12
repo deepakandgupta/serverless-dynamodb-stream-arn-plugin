@@ -10,6 +10,14 @@ How to use
 
 1. Add to your serverless config plugins object
 
+```
+
+plugins: 
+  - other plugins
+  - serverless-dynamodb-stream-arn-plugin
+
+```
+
 2. Call the function on your stream arn key like below
 
 `arn: ${fetchStreamARN(<tableName>)}`
@@ -25,6 +33,8 @@ functions:
           startingPosition: LATEST
           enabled: true // Any other parameters can be added as provided by serverless
 ```
+
+The plugin will automatically be called on command `serverless deploy`
 
 Note: Passing region where the table exists is important, the plugin automatically takes the value from `serverless -> provider -> region`
 
