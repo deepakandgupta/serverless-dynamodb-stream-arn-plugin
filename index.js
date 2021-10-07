@@ -18,9 +18,13 @@ class fetchDynamoDBStreamsPlugin {
 								"provider",
 								"region",
 							]);
-						let region = options.region ?? configuredRegion;
-						if(params.length > 1){
-							region = params[1]
+						let region = "";
+						if (options && options.region) {
+							region = options.region;
+						} else if(configuredRegion){
+							region = configuredRegion;
+						} else if(params.length > 1) {
+							region = params[1];
 						}
 						const tableName = params[0];
 						serverless.cli.log(
